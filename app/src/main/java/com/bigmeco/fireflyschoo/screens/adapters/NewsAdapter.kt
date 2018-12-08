@@ -6,6 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import com.bigmeco.fireflyschoo.R
 import com.bigmeco.fireflyschoo.data.NewsPojo
+import com.bigmeco.fireflyschoo.models.implementation.ImageLoadingModel
+import kotlinx.android.synthetic.main.item_news.view.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+
 
 class NewsAdapter(val items: ArrayList<NewsPojo>, val listener: (id: Int) -> Unit) : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
 
@@ -18,7 +24,11 @@ class NewsAdapter(val items: ArrayList<NewsPojo>, val listener: (id: Int) -> Uni
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(item: NewsPojo, listener: (id: Int) -> Unit) = with(itemView) {
-
+            GlobalScope.launch(Dispatchers.Main) {
+                imageNews.setImageBitmap(ImageLoadingModel().urlToImage(item.image!!))
+            }
+            textTitle.text = item.title
+            textBody.text = item.body
         }
 
     }

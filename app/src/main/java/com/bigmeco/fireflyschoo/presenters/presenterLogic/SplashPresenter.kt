@@ -5,9 +5,9 @@ import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
 import com.bigmeco.fireflyschoo.models.implementation.AuthModel
 import com.bigmeco.fireflyschoo.presenters.viewInterface.SplashView
-import kotlinx.coroutines.experimental.Dispatchers
-import kotlinx.coroutines.experimental.GlobalScope
-import kotlinx.coroutines.experimental.launch
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 @InjectViewState
 class  SplashPresenter : MvpPresenter<SplashView>() {

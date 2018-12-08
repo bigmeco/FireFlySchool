@@ -29,7 +29,6 @@ class NavigationActivity : MvpAppCompatActivity(), NavigationView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_navigation)
         Log.d("NavigationActivity",intent.getStringExtra("UID"))
-
         transitionFragment(NewsFragment())
         bottom_navigation.setOnNavigationItemSelectedListener { item ->
             when (item.itemId){

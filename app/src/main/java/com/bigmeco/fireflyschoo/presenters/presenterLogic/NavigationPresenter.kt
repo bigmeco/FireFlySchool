@@ -6,4 +6,5 @@ import com.bigmeco.fireflyschoo.presenters.viewInterface.NavigationView
 
 @InjectViewState
 class NavigationPresenter: MvpPresenter<NavigationView>()  {
+
 }
