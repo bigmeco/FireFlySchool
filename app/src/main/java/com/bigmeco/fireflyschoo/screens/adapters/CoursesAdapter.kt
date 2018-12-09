@@ -5,14 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.bigmeco.fireflyschoo.R
-import com.bigmeco.fireflyschoo.data.NewsPojo
+import com.bigmeco.fireflyschoo.data.CoursesPojo
 import com.bigmeco.fireflyschoo.models.implementation.ImageLoadingModel
-import kotlinx.android.synthetic.main.item_news.view.*
+import kotlinx.android.synthetic.main.item_courses.view.*
 
 
-class NewsAdapter(val items: ArrayList<NewsPojo>, val listener: (id: Int) -> Unit) : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
+class CoursesAdapter(val items: ArrayList<CoursesPojo>, val listener: (id: Int) -> Unit) : RecyclerView.Adapter<CoursesAdapter.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_news, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_courses, parent, false))
 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) = holder.bind(items[position], listener)
@@ -20,12 +20,10 @@ class NewsAdapter(val items: ArrayList<NewsPojo>, val listener: (id: Int) -> Uni
     override fun getItemCount() = items.size
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(item: NewsPojo, listener: (id: Int) -> Unit) = with(itemView) {
+        fun bind(item: CoursesPojo, listener: (id: Int) -> Unit) = with(itemView) {
             ImageLoadingModel().urlToImage(item.image!!) {
-                imageNews.setImageBitmap(it)
+                imageCourses.setImageBitmap(it)
             }
-            textTitle.text = item.title
-            textBody.text = item.body
         }
 
     }

@@ -23,7 +23,7 @@ class NewsFragment :  MvpAppCompatFragment(), NewsView {
 
 
     @InjectPresenter
-    lateinit var splashPresenter: NewsPresenter
+    lateinit var newsPresenter: NewsPresenter
 
     @ProvidePresenter
     fun provideNewsPresenter(): NewsPresenter {
@@ -39,7 +39,7 @@ class NewsFragment :  MvpAppCompatFragment(), NewsView {
         super.onViewCreated(view, savedInstanceState)
 
         newsList.layoutManager = LinearLayoutManager(activity)
-        splashPresenter.loadListNews()
+        newsPresenter.loadListNews()
 
     }
     override fun loadingNews(resultNewsList: ArrayList<NewsPojo>) {

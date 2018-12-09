@@ -2,6 +2,7 @@ package com.bigmeco.fireflyschoo.screens.activitys
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import com.arellomobile.mvp.MvpAppCompatActivity
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
@@ -30,6 +31,7 @@ class SplashActivity : MvpAppCompatActivity(), SplashView {
 
 
     override fun auth(uid: String) {
+        Log.d("auth",uid)
         val intent = Intent(this, NavigationActivity::class.java)
         intent.putExtra("UID", uid)
         startActivity(intent)

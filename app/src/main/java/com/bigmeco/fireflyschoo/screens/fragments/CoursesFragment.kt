@@ -4,15 +4,33 @@ import android.content.Context
 import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.widget.GridLayoutManager
+import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.arellomobile.mvp.MvpAppCompatFragment
+import com.arellomobile.mvp.presenter.InjectPresenter
+import com.arellomobile.mvp.presenter.ProvidePresenter
 
 import com.bigmeco.fireflyschoo.R
+import com.bigmeco.fireflyschoo.data.CoursesPojo
+import com.bigmeco.fireflyschoo.presenters.presenterLogic.CoursesPresenter
+import com.bigmeco.fireflyschoo.presenters.viewInterface.CoursesView
+import com.bigmeco.fireflyschoo.screens.adapters.CoursesAdapter
+import kotlinx.android.synthetic.main.fragment_courses.*
 
-class CoursesFragment : Fragment() {
+class CoursesFragment :  MvpAppCompatFragment(), CoursesView {
 
 
+
+    @InjectPresenter
+    lateinit var coursesPresenter: CoursesPresenter
+
+    @ProvidePresenter
+    fun provideCoursesPresenter(): CoursesPresenter {
+        return CoursesPresenter()
+    }
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
@@ -22,6 +40,13 @@ class CoursesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        coursesList.layoutManager = GridLayoutManager(activity,2)
+        coursesPresenter.loadListNews()
 
     }
+    override fun loadingCourses(  resultCoursesList: ArrayList<CoursesPojo>) {
+        coursesList.adapter = CoursesAdapter(resultCoursesList) {
+        }
+    }
+
 }

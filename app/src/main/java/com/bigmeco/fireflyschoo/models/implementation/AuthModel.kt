@@ -2,39 +2,37 @@ package com.bigmeco.fireflyschoo.models.implementation
 
 import android.util.Log
 import com.bigmeco.fireflyschoo.models.contracts.IAuthModel
+import com.bigmeco.fireflyschoo.presenters.presenterLogic.SplashPresenter
 import com.google.firebase.auth.FirebaseAuth
-import kotlin.coroutines.resume
-import kotlin.coroutines.suspendCoroutine
+import java.net.CacheResponse
 
 class AuthModel:IAuthModel {
     private val TAG = "AnonymousAuth"
 
-    override suspend fun getAuth(): String {
+    override  fun getAuth(response: (uid: String) -> Unit) {
         val mAuth: FirebaseAuth = FirebaseAuth.getInstance()
 
 
-        return suspendCoroutine { continuation ->
+
             mAuth.signInAnonymously()
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
                             Log.d(TAG, "signInAnonymously:success")
                             val user = mAuth.currentUser
                             if (user != null) {
-                                continuation.resume(user.uid)
+                                response.invoke(user.uid)
                                 Log.d(TAG, "signInAnonymously:success"+user.uid)
-
                             } else {
                                 Log.d(TAG, "signInAnonymously:else")
 
                             }
-
                         } else {
                             Log.w(TAG, "signInAnonymously:failure", task.exception)
 
                         }
 
                     }
-        }
+
     }
 
 }

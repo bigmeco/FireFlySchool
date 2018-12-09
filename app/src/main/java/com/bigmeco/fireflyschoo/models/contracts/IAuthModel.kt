@@ -1,5 +1,7 @@
 package com.bigmeco.fireflyschoo.models.contracts
 
+import com.bigmeco.fireflyschoo.presenters.presenterLogic.SplashPresenter
+
 interface IAuthModel {
-    suspend fun getAuth():String
+     fun getAuth(response: (uid: String) -> Unit)
 }

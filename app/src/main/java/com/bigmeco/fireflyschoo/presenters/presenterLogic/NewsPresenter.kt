@@ -12,8 +12,10 @@ import kotlinx.coroutines.launch
 @InjectViewState
 class NewsPresenter : MvpPresenter<NewsView>() {
     fun loadListNews() {
-        GlobalScope.launch(Dispatchers.Main) {
-            viewState.loadingNews(LoadNewsModel().loadingNews())
+        LoadNewsModel().loadingNews{
+            viewState.loadingNews(it)
         }
+
+
     }
 }
