@@ -43,7 +43,7 @@
                 app:srcCompat="@drawable/beac" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/textTitel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
@@ -55,7 +55,7 @@
                 android:text="TextView"
                 android:textAlignment="center"
                 android:textColor="@color/colorAccent"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
         </FrameLayout>

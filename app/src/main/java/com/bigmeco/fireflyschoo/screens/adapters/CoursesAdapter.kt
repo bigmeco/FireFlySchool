@@ -24,6 +24,7 @@ class CoursesAdapter(val items: ArrayList<CoursesPojo>, val listener: (id: Int) 
             ImageLoadingModel().urlToImage(item.image!!) {
                 imageCourses.setImageBitmap(it)
             }
+            textTitel.text = item.title
         }
 
     }
