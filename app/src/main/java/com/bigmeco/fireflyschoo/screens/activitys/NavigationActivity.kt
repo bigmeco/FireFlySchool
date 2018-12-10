@@ -10,6 +10,7 @@ import com.bigmeco.fireflyschoo.R
 import com.bigmeco.fireflyschoo.presenters.presenterLogic.NavigationPresenter
 import com.bigmeco.fireflyschoo.presenters.viewInterface.NavigationView
 import com.bigmeco.fireflyschoo.screens.fragments.CoursesFragment
+import com.bigmeco.fireflyschoo.screens.fragments.InfoFragment
 import com.bigmeco.fireflyschoo.screens.fragments.NewsFragment
 import kotlinx.android.synthetic.main.activity_navigation.*
 
@@ -34,7 +35,7 @@ class NavigationActivity : MvpAppCompatActivity(), NavigationView {
             when (item.itemId){
                 R.id.action_news -> transitionFragment(NewsFragment())
                 R.id.action_courses -> transitionFragment(CoursesFragment())
-                R.id.action_user -> transitionFragment(NewsFragment())
+                R.id.action_user -> transitionFragment(InfoFragment())
             }
             true
         }
