@@ -6,11 +6,12 @@
     android:layout_height="match_parent">
 
     <android.support.design.widget.FloatingActionButton
+        android:id="@+id/buttonPhone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center"
         android:clickable="true"
-        android:src="@android:drawable/stat_sys_phone_call"
+        android:src="@drawable/phone_call"
         app:layout_anchor="@+id/appbar"
         app:layout_anchorGravity="center" />
 
@@ -18,6 +19,8 @@
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+
 
         <android.support.design.widget.TabLayout
             android:id="@+id/tabs"

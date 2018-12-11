@@ -1,6 +1,7 @@
 package com.bigmeco.fireflyschoo.screens.fragments
 
 import android.content.Context
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -29,10 +30,13 @@ class InfoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         mAdapter = ViewPagerAdapter(fragmentManager)
-
+        buttonPhone.setOnClickListener {
+            val intent = Intent(Intent.ACTION_CALL, Uri.parse("tel:" + "+7-950-008-28-54"))
+            startActivity(intent)
+        }
         viewPager.adapter = mAdapter
         viewPager.currentItem = 0
-        viewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener{
+        viewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
 
             override fun onPageScrolled(p0: Int, p1: Float, p2: Int) {
             }
@@ -46,7 +50,6 @@ class InfoFragment : Fragment() {
             }
         })
         tabs.setupWithViewPager(viewPager)
-
     }
 
 }

@@ -3,10 +3,12 @@ package com.bigmeco.fireflyschoo.presenters.viewInterface
 import com.arellomobile.mvp.MvpView
 import com.arellomobile.mvp.viewstate.strategy.AddToEndStrategy
 import com.arellomobile.mvp.viewstate.strategy.StateStrategyType
-import com.bigmeco.fireflyschoo.data.CoursesPojo
-import com.bigmeco.fireflyschoo.data.NewsPojo
+import com.bigmeco.fireflyschoo.data.AdressPojo
+import com.bigmeco.fireflyschoo.data.InfoPojo
+
 
 @StateStrategyType(AddToEndStrategy::class)
-interface CoursesView:MvpView {
-    fun loadingCourses(resultCoursesList:  ArrayList<CoursesPojo>)
+interface CommunicationView : MvpView {
+   fun loadInfo(it: InfoPojo)
+   fun loadAdress(it: ArrayList<AdressPojo>)
 }

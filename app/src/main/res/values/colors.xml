@@ -5,4 +5,5 @@
     <color name="colorAccent">#fcbe13</color>
     <color name="beac_colors_image">#38000000</color>
     <color name="test_color">#243151</color>
+    <color name="text_color_50">#d8243151</color>
 </resources>
