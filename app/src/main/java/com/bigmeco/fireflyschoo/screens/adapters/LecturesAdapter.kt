@@ -7,11 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import com.bigmeco.fireflyschoo.R
 import com.bigmeco.fireflyschoo.data.CoursesPojo
+import com.bigmeco.fireflyschoo.data.LecturesPojo
 import com.bigmeco.fireflyschoo.models.implementation.ImageLoadingModel
 import kotlinx.android.synthetic.main.item_courses.view.*
 
 
-class CoursesAdapter(val items: ArrayList<CoursesPojo>, val listener: (id: Int) -> Unit) : RecyclerView.Adapter<CoursesAdapter.ViewHolder>() {
+class LecturesAdapter(val items: ArrayList<LecturesPojo>, val listener: (id: Int) -> Unit) : RecyclerView.Adapter<LecturesAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_courses, parent, false))
 
@@ -21,7 +22,7 @@ class CoursesAdapter(val items: ArrayList<CoursesPojo>, val listener: (id: Int) 
     override fun getItemCount() = items.size
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(item: CoursesPojo, listener: (id: Int) -> Unit) = with(itemView) {
+        fun bind(item: LecturesPojo, listener: (id: Int) -> Unit) = with(itemView) {
 //            ImageLoadingModel().urlToImage(item.image!!) {
 //                imageCourses.setImageBitmap(it)
 //            }

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#0040bb</color>
-    <color name="colorPrimaryDark">#002e9d</color>
-    <color name="colorAccent">#fcbe13</color>
-    <color name="beac_colors_image">#38000000</color>
+    <color name="colorPrimary">#fcbe13</color>
+    <color name="colorPrimaryDark">#e1a400</color>
+    <color name="colorAccent">#1751bf</color>
+    <color name="beac_colors_image">#19fcbe13</color>
     <color name="test_color">#243151</color>
     <color name="text_color_50">#d8243151</color>
+    <color name="color_blur">#7e2a344f</color>
+    <color name="text_color_menu">#eeedf0f5</color>
 </resources>

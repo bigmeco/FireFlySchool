@@ -1,6 +1,6 @@
 package com.bigmeco.fireflyschoo.data
 
-class CoursesPojo {
+class LecturesPojo {
     var title: String? = null
     var body: String? = null
     var image: String? = null

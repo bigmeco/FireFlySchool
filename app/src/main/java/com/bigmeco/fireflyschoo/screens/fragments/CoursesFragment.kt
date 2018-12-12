@@ -40,7 +40,7 @@ class CoursesFragment :  MvpAppCompatFragment(), CoursesView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        coursesList.layoutManager = GridLayoutManager(activity,2)
+        coursesList.layoutManager = LinearLayoutManager(activity)
         coursesPresenter.loadListNews()
 
     }

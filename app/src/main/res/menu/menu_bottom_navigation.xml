@@ -10,6 +10,10 @@
         android:icon="@drawable/courses_icon"
         android:title="курсы" />
     <item
+        android:id="@+id/action_lectures"
+        android:icon="@drawable/presentation"
+        android:title="лекции" />
+    <item
         android:id="@+id/action_user"
         android:icon="@drawable/location"
         android:title="инфо" />
