@@ -54,7 +54,6 @@
         app:blurOverlayColor="@color/beac_colors_image"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <!--Any child View here, TabLayout for example-->
 
         <android.support.design.widget.BottomNavigationView
             android:id="@+id/bottom_navigation"

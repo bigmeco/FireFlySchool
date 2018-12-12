@@ -13,4 +13,5 @@
         <item name="android:windowTranslucentNavigation">true</item>
         <item name="colorPrimaryDark">@color/colorPrimary</item>
     </style>
+
 </resources>

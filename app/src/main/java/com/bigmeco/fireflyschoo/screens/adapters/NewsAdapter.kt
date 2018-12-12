@@ -26,6 +26,10 @@ class NewsAdapter(val items: ArrayList<NewsPojo>, val listener: (id: Int) -> Uni
             }
             textTitle.text = item.title
             textBody.text = item.body
+            card.setOnClickListener {
+                listener.invoke(1)
+
+            }
         }
 
     }

@@ -1,5 +1,6 @@
 package com.bigmeco.fireflyschoo.screens.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
@@ -14,6 +15,8 @@ import com.bigmeco.fireflyschoo.R
 import com.bigmeco.fireflyschoo.data.NewsPojo
 import com.bigmeco.fireflyschoo.presenters.presenterLogic.NewsPresenter
 import com.bigmeco.fireflyschoo.presenters.viewInterface.NewsView
+import com.bigmeco.fireflyschoo.screens.activitys.FullNewsActivity
+import com.bigmeco.fireflyschoo.screens.activitys.NavigationActivity
 import com.bigmeco.fireflyschoo.screens.adapters.NewsAdapter
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_news.*
@@ -44,6 +47,9 @@ class NewsFragment :  MvpAppCompatFragment(), NewsView {
     }
     override fun loadingNews(resultNewsList: ArrayList<NewsPojo>) {
         newsList.adapter = NewsAdapter(resultNewsList) {
+            val intent = Intent(activity, FullNewsActivity::class.java)
+            intent.putExtra("ID", it)
+            startActivity(intent)
         }
     }
 
