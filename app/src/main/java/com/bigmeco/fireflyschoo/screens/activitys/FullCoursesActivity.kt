@@ -5,13 +5,7 @@ import android.os.Bundle
 import com.bigmeco.fireflyschoo.R
 import com.bigmeco.fireflyschoo.data.CoursesPojo
 import com.bigmeco.fireflyschoo.models.implementation.ImageLoadingModel
-import com.bigmeco.fireflyschoo.screens.adapters.ImageViewPagerAdpter
 import kotlinx.android.synthetic.main.activity_courses.*
-import android.R.attr.delay
-import android.support.v4.os.HandlerCompat.postDelayed
-import com.bigmeco.fireflyschoo.R.id.viewPager
-
-
 
 
 class FullCoursesActivity : AppCompatActivity() {
@@ -36,12 +30,21 @@ class FullCoursesActivity : AppCompatActivity() {
             }
         }
         if (thumbs.images != null) {
-
-        val mTextPagerAdapter = ImageViewPagerAdpter(
-                supportFragmentManager, thumbs.images!!)
-
-        app_bar_image.adapter = mTextPagerAdapter
-
+            if (thumbs.images!!.size > 0) {
+                ImageLoadingModel().urlToImage(thumbs.images!![0]) {
+                    imageView1.setImageBitmap(it)
+                }
+            }
+            if (thumbs.images!!.size >= 2) {
+                ImageLoadingModel().urlToImage(thumbs.images!![1]) {
+                    imageView2.setImageBitmap(it)
+                }
+            }
+            if (thumbs.images!!.size >= 3) {
+                ImageLoadingModel().urlToImage(thumbs.images!![2]) {
+                    imageView3.setImageBitmap(it)
+                }
+            }
         }
 
     }
