@@ -12,7 +12,7 @@ import com.bigmeco.fireflyschoo.models.implementation.ImageLoadingModel
 import kotlinx.android.synthetic.main.item_courses.view.*
 
 
-class LecturesAdapter(val items: ArrayList<LecturesPojo>, val listener: (id: Int) -> Unit) : RecyclerView.Adapter<LecturesAdapter.ViewHolder>() {
+class LecturesAdapter(val items: ArrayList<LecturesPojo>, val listener: (item: LecturesPojo) -> Unit) : RecyclerView.Adapter<LecturesAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_courses, parent, false))
 
@@ -22,12 +22,15 @@ class LecturesAdapter(val items: ArrayList<LecturesPojo>, val listener: (id: Int
     override fun getItemCount() = items.size
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(item: LecturesPojo, listener: (id: Int) -> Unit) = with(itemView) {
+        fun bind(item: LecturesPojo, listener: (item: LecturesPojo) -> Unit) = with(itemView) {
 //            ImageLoadingModel().urlToImage(item.image!!) {
 //                imageCourses.setImageBitmap(it)
 //            }
             textTitel.text = item.title
-            itemCourses.setBackgroundColor(Color.parseColor(item.color));
+            itemLectures.setBackgroundColor(Color.parseColor(item.color))
+            itemLectures.setOnClickListener {
+                listener.invoke(item)
+            }
         }
 
     }

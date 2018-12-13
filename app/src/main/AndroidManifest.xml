@@ -22,8 +22,8 @@
         </activity>
         <activity android:name=".screens.activitys.NavigationActivity" />
         <activity android:name=".screens.activitys.FullNewsActivity" />
-        <activity android:name=".screens.activitys.FullCoursesActivity">
-        </activity>
+        <activity android:name=".screens.activitys.FullCoursesActivity"></activity>
+        <activity android:name=".screens.activitys.FullLecturesActivity"></activity>
     </application>
 
 </manifest>

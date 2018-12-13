@@ -30,9 +30,9 @@ class CoursesAdapter(val items: ArrayList<CoursesPojo>, val listener: (item: Cou
             }
 
             textTitel.text = item.title
-            itemCourses.setBackgroundColor(Color.parseColor(item.color))
+            itemLectures.setBackgroundColor(Color.parseColor(item.color))
 
-            itemCourses.setOnClickListener {
+            itemLectures.setOnClickListener {
                 listener.invoke(item)
             }
         }
