@@ -10,7 +10,7 @@ import com.bigmeco.fireflyschoo.models.implementation.ImageLoadingModel
 import kotlinx.android.synthetic.main.item_news.view.*
 
 
-class NewsAdapter(val items: ArrayList<NewsPojo>, val listener: (id: Int) -> Unit) : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
+class NewsAdapter(val items: ArrayList<NewsPojo>, val listener: (item: NewsPojo) -> Unit) : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_news, parent, false))
 
@@ -20,14 +20,15 @@ class NewsAdapter(val items: ArrayList<NewsPojo>, val listener: (id: Int) -> Uni
     override fun getItemCount() = items.size
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(item: NewsPojo, listener: (id: Int) -> Unit) = with(itemView) {
+        fun bind(item: NewsPojo, listener: (item: NewsPojo) -> Unit) = with(itemView) {
             ImageLoadingModel().urlToImage(item.image!!) {
                 imageNews.setImageBitmap(it)
             }
             textTitle.text = item.title
+            textTime.text = item.time
             textBody.text = item.body
             card.setOnClickListener {
-                listener.invoke(1)
+                listener.invoke(item)
 
             }
         }

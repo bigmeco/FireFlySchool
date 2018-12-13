@@ -48,7 +48,9 @@ class NewsFragment :  MvpAppCompatFragment(), NewsView {
     override fun loadingNews(resultNewsList: ArrayList<NewsPojo>) {
         newsList.adapter = NewsAdapter(resultNewsList) {
             val intent = Intent(activity, FullNewsActivity::class.java)
-            intent.putExtra("ID", it)
+            val bundle = Bundle()
+            bundle.putSerializable("value", it)
+            intent.putExtras(bundle)
             startActivity(intent)
         }
     }

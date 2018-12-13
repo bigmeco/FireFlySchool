@@ -23,11 +23,6 @@
         <activity android:name=".screens.activitys.NavigationActivity" />
         <activity android:name=".screens.activitys.FullNewsActivity" />
         <activity android:name=".screens.activitys.FullCoursesActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
