@@ -24,6 +24,15 @@
         <activity android:name=".screens.activitys.FullNewsActivity" />
         <activity android:name=".screens.activitys.FullCoursesActivity"></activity>
         <activity android:name=".screens.activitys.FullLecturesActivity"></activity>
+        <activity android:name=".screens.activitys.FullCoursesActivity">
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
     </application>
 
 </manifest>
